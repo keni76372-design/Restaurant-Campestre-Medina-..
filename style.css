@@ -15,7 +15,7 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 .price{font-weight:800;color:#9b2b2b;margin:8px 0}
 .btn{background:#8b0000;color:#fff;border:none;padding:10px 12px;border-radius:8px;cursor:pointer;font-weight:700}
 .btn-buy{background:#5a0a0a}
-.info{list-style:none;padding:0;max-width:600px;margin:12px auto;color:#4a3a3a}
+.info{list-style:none;padding:0;max-width:600px;margin:12px auto;color:#463838}
 .info li{background:#fff;padding:10px;border-radius:8px;margin-bottom:8px;box-shadow:0 4px 10px rgba(0,0,0,0.05)}
 .payments{display:flex;gap:18px;justify-content:center;align-items:center;margin-top:12px;flex-wrap:wrap}
 .payments img{width:70px}
