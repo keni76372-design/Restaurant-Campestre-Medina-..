@@ -5,7 +5,7 @@ body{margin:0;font-family: 'Georgia', 'Times New Roman', serif;background:#fffdf
 .brand{display:inline-block;margin:0;font-size:1.4rem;color:#f8e6e6}
 .nav{float:right}
 .nav a{color:#fff;text-decoration:none;margin-left:14px;font-weight:700}
-.hero{height:58vh;background-image:url('/logo del restaurante.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#000000;text-align:center;padding:20px}
+.hero{height:58vh;background-image:url('keni76372-design/Restaurant-Campestre-Medina-../logo del restaurante.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#000000;text-align:center;padding:20px}
 .hero-inner h2{font-size:2rem;margin:0 0 8px;text-shadow:0 3px 12px rgba(0,0,0,0.35)}
 main{padding:28px 0}
 h3{text-align:center;color:#6b1212;margin-top:0}
