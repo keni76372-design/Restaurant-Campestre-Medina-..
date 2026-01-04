@@ -91,55 +91,27 @@ h3{text-align:center;color:#6b1212;margin-top:0}
     transform: translateX(-460px);
 }
 
-/* FLECHAS */
-.carrusel .flecha {
+.flecha {
+    display: none;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-}
-
-.carrusel .flecha label {
-    display: none;
     width: 40px;
     height: 40px;
-    background: #c98aa0;
-    border-radius: 50%;
     cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
-.carrusel .flecha label::before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-top: 3px solid white;
-    border-left: 3px solid white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
+.izquierda { left: 10px; }
+.derecha { right: 10px; }
 
-.carrusel .derecha label::before {
-    transform: translate(-50%, -50%) rotate(135deg);
-}
-
-.izquierda { left: 5px; }
-.derecha { right: 5px; }
-
-/* Mostrar flecha correcta */
-#s1:checked ~ .izquierda label:nth-child(1),
-#s2:checked ~ .izquierda label:nth-child(2),
-#s3:checked ~ .izquierda label:nth-child(3),
-#s4:checked ~ .izquierda label:nth-child(4),
-#s5:checked ~ .izquierda label:nth-child(5),
-#s6:checked ~ .izquierda label:nth-child(6),
-#s1:checked ~ .derecha label:nth-child(1),
-#s2:checked ~ .derecha label:nth-child(2),
-#s3:checked ~ .derecha label:nth-child(3),
-#s4:checked ~ .derecha label:nth-child(4),
-#s5:checked ~ .derecha label:nth-child(5),
-#s6:checked ~ .derecha label:nth-child(6)
- {
+/* Mostrar solo las flechas del slide activo */
+#s1:checked ~ .flechas .s1,
+#s2:checked ~ .flechas .s2,
+#s3:checked ~ .flechas .s3,
+#s4:checked ~ .flechas .s4,
+#s5:checked ~ .flechas .s5,
+#s6:checked ~ .flechas .s6 {
     display: block;
 }
 
