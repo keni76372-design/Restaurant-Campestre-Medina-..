@@ -4,6 +4,7 @@ body{margin:0;font-family: 'Georgia', 'Times New Roman', serif;background:#fffdf
 .site-header{background:#5b0b0b;color:#fff;padding:16px 0}
 .brand{display:inline-block;margin:0;font-size:1.4rem;color:#f8e6e6}
 h1{font-size: 80px;}
+h1:hover {font-size: 20px;}
 .nav{float:right}
 .nav a{color:#fff;text-decoration:none;margin-left:14px;font-weight:700}
 .hero{height:60vh;background-image:url('logo del restaurante.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#000000;text-align:center;padding:20px}
