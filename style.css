@@ -26,9 +26,9 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 .site-footer{background:#3f0a0a;color:#fff;padding:14px 0;margin-top:20px;text-align:center}
 /* CONTENEDOR */
 .carrusel {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 40px auto;
-    padding: 20px; /* 20px de espacio */
+    padding: 10px; /* 10px de espacio */
     background: #dffefe;
     border-radius: 10px;
     position: relative;
