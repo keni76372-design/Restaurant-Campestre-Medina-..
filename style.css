@@ -130,9 +130,15 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 #slide1:checked ~ .prev1,
 #slide2:checked ~ .prev2,
 #slide3:checked ~ .prev3,
+#slide4:checked ~ .prev4,
+#slide5:checked ~ .prev5,
+#slide6:checked ~ .prev6,
 #slide1:checked ~ .next1,
 #slide2:checked ~ .next2,
-#slide3:checked ~ .next3 {
+#slide3:checked ~ .next3,
+#slide4:checked ~ .next4,
+#slide5:checked ~ .next5,
+#slide6:checked ~ .next6 {
     display: block;
 }
 
