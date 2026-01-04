@@ -34,7 +34,9 @@ h3{text-align:center;color:#6b1212;margin-top:0}
     overflow: hidden;
     border-radius: 10px;
 }
-
+.carrusel {
+    position: relative;
+}
 /* OCULTAR RADIOS */
 .carrusel input {
     display: none;
@@ -46,7 +48,10 @@ h3{text-align:center;color:#6b1212;margin-top:0}
     gap: 20px;
     transition: transform 0.5s ease;
 }
-
+.cards {
+    position: relative;
+    z-index: 1;
+}
 /* CARD */
 .carrusel .card {
     min-width: calc((100% - 60px) / 4);
@@ -120,6 +125,12 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 }
 .derecha::before {
     transform: translate(-50%, -50%) rotate(135deg);
+}
+.flecha {
+    position: absolute;
+    top: 50%;
+    z-index: 10;          /* 👈 CLAVE: encima de las imágenes */
+    pointer-events: auto;
 }
 
 /* MOSTRAR FLECHAS CORRECTAS */
