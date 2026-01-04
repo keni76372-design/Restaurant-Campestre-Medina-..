@@ -169,7 +169,7 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 }
 
 /* RESPONSIVO */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .carrusel {
         padding: 20px;
     }
