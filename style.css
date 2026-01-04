@@ -25,119 +25,124 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 .socials img{width:34px}
 .site-footer{background:#3f0a0a;color:#fff;padding:14px 0;margin-top:20px;text-align:center}
 /* CONTENEDOR PRINCIPAL */
-.carrusel {
-    max-width: 1200px;          /* más largo */
-    margin: 40px auto;
-    padding: 10px;              /* 10px desde los bordes */
-    background: #dffefe;
-    border-radius: 10px;
+.carrusel-cards {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    background: #f2f2f2;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
 }
 
-/* Ocultar radios */
-.carrusel input {
+/* OCULTAR RADIOS */
+.carrusel-cards input {
     display: none;
 }
 
-/* CONTENEDOR DE ITEMS */
-.carrusel .imagenes {
+/* CONTENEDOR DE CARDS */
+.contenedor-cards {
     display: flex;
     gap: 20px;
-    transition: transform 0.6s ease;
+    transition: transform 0.5s ease;
 }
 
-/* ITEM (4 visibles) */
-.carrusel .item {
-    min-width: calc((100% - 60px) / 4); /* 4 items + espacios */
+/* CARD */
+.carrusel-cards .card {
+    min-width: calc((100% - 60px) / 4); /* 4 visibles */
     background: white;
-    text-align: center;
-    border-radius: 6px;
-    padding: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
+    text-align: left;
 }
 
 /* IMÁGENES SOLO DEL CARRUSEL */
-.carrusel .item img {
+.carrusel-cards .card img {
     width: 100%;
-    height: 160px;
+    height: 170px;
     object-fit: cover;
 }
 
 /* TEXTO */
-.carrusel .info h4 {
-    margin: 8px 0 2px;
+.carrusel-cards .card h4 {
+    margin: 12px;
     font-size: 15px;
+    font-family: Arial, sans-serif;
 }
 
-.carrusel .info p {
-    margin: 0;
-    font-weight: bold;
-    color: #8a4d6f;
-}
-
-/* MOVIMIENTO (6 imágenes / 4 visibles → 3 posiciones) */
-#s1:checked ~ .imagenes {
+/* MOVIMIENTO */
+#slide1:checked ~ .contenedor-cards {
     transform: translateX(0);
 }
 
-#s2:checked ~ .imagenes {
+#slide2:checked ~ .contenedor-cards {
     transform: translateX(calc(-1 * (100% / 4) - 20px));
 }
 
-#s3:checked ~ .imagenes {
+#slide3:checked ~ .contenedor-cards {
     transform: translateX(calc(-2 * (100% / 4) - 40px));
 }
 
 /* FLECHAS */
-.carrusel .flecha {
+.flecha {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-}
-
-.carrusel .flecha label {
-    display: none;
-    width: 38px;
-    height: 38px;
-    background: #4882b4;
+    width: 40px;
+    height: 40px;
+    background: white;
     border-radius: 50%;
     cursor: pointer;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    display: none;
 }
 
-.carrusel .flecha label::before {
+/* ICONO */
+.flecha::before {
     content: '';
     width: 10px;
     height: 10px;
-    border-top: 3px solid white;
-    border-left: 3px solid white;
+    border-top: 2px solid #1ea7d7;
+    border-left: 2px solid #1ea7d7;
     position: absolute;
     top: 50%;
     left: 50%;
+}
+
+.izquierda {
+    left: 10px;
+}
+
+.izquierda::before {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.carrusel .derecha label::before {
+.derecha {
+    right: 10px;
+}
+
+.derecha::before {
     transform: translate(-50%, -50%) rotate(135deg);
 }
 
-.izquierda { left: 10px; }
-.derecha { right: 10px; }
-
-/* Mostrar flecha correcta */
-#s1:checked ~ .izquierda label:nth-child(1),
-#s2:checked ~ .izquierda label:nth-child(2),
-#s3:checked ~ .izquierda label:nth-child(3),
-#s1:checked ~ .derecha label:nth-child(1),
-#s2:checked ~ .derecha label:nth-child(2),
-#s3:checked ~ .derecha label:nth-child(3) {
+/* MOSTRAR FLECHAS CORRECTAS */
+#slide1:checked ~ .prev1,
+#slide2:checked ~ .prev2,
+#slide3:checked ~ .prev3,
+#slide1:checked ~ .next1,
+#slide2:checked ~ .next2,
+#slide3:checked ~ .next3 {
     display: block;
 }
 
+/* BLOQUEO DE LÍMITES */
+.prev1 { pointer-events: none; }
+.next3 { pointer-events: none; }
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
-    .carrusel .item {
-        min-width: calc((100% - 20px) / 2); /* 2 visibles */
+    .carrusel-cards .card {
+        min-width: calc((100% - 20px) / 2);
     }
 }
