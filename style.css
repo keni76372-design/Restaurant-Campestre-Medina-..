@@ -24,16 +24,16 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 .socials{display:flex;gap:10px;justify-content:center;margin-top:12px}
 .socials img{width:34px}
 .site-footer{background:#3f0a0a;color:#fff;padding:14px 0;margin-top:20px;text-align:center}
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR */
 .carrusel {
-    max-width: 720px;
-    margin: 20px auto;
-    padding: 30px 60px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px; /* 20px de espacio */
     background: #dffefe;
     border-radius: 10px;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* Ocultar radios */
@@ -44,110 +44,110 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 /* CONTENEDOR DE ITEMS */
 .carrusel .imagenes {
     display: flex;
-    gap: 30px;
-    justify-content: center;
-    transition: transform 0.6s ease;
+    gap: 20px;
+    transition: transform 0.5s ease;
 }
 
 /* ITEM */
 .carrusel .item {
-    text-align: center;
+    min-width: calc((100% - 60px) / 4); /* 4 visibles */
     background: white;
-    padding: 10px;
     border-radius: 6px;
+    text-align: center;
+    padding: 10px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 
 /* IMÁGENES SOLO DEL CARRUSEL */
 .carrusel .item img {
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    height: 160px;
     object-fit: cover;
-    border: 4px solid #fff;
 }
 
 /* TEXTO */
-.carrusel .info h4 {
-    margin: 8px 0 2px;
-    font-size: 16px;
+.carrusel .item h4 {
+    margin: 8px 0 0;
+    font-size: 15px;
 }
 
-.carrusel .info p {
-    margin: 0;
-    font-weight: bold;
-    color: #8d1b5d;
-}
-
-/* MOVIMIENTO */
+/* MOVIMIENTO (6 imágenes / 4 visibles) */
 #s1:checked ~ .imagenes {
     transform: translateX(0);
 }
 
 #s2:checked ~ .imagenes {
-    transform: translateX(-230px);
+    transform: translateX(calc(-1 * (100% / 4) - 20px));
 }
 
 #s3:checked ~ .imagenes {
-    transform: translateX(-460px);
+    transform: translateX(calc(-2 * (100% / 4) - 40px));
 }
 
+/* FLECHAS */
 .flecha {
-    display: none;
     position: absolute;
     top: 50%;
     width: 40px;
     height: 40px;
+    background: #c98aa0;
+    border-radius: 50%;
     cursor: pointer;
     transform: translateY(-50%);
-    z-index: 10;
+    display: none;
 }
 
-.izquierda { left: 10px; }
-.derecha { right: 10px; }
+/* ICONO FLECHA */
+.flecha::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
 
-/* Mostrar solo las flechas del slide activo */
-#s1:checked ~ .flechas .s1,
-#s2:checked ~ .flechas .s2,
-#s3:checked ~ .flechas .s3,
-#s4:checked ~ .flechas .s4,
-#s5:checked ~ .flechas .s5,
-#s6:checked ~ .flechas .s6 {
+.izquierda {
+    left: 10px;
+}
+
+.izquierda::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.derecha {
+    right: 10px;
+}
+
+.derecha::before {
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+/* Flechas correctas por slide */
+#s1:checked ~ .prev1,
+#s2:checked ~ .prev2,
+#s3:checked ~ .prev3,
+#s1:checked ~ .next1,
+#s2:checked ~ .next2,
+#s3:checked ~ .next3 {
     display: block;
 }
 
-/* PUNTOS */
-.carrusel .puntos {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
+/* Lógica de navegación */
+.prev1 { pointer-events: none; }      /* no retrocede más */
+.next1 { pointer-events: auto; }
 
-.carrusel .puntos label {
-    width: 12px;
-    height: 12px;
-    background: #c7a3b1;
-    border-radius: 50%;
-    cursor: pointer;
-}
+.prev2 { pointer-events: auto; }
+.next2 { pointer-events: auto; }
 
-#s1:checked ~ .puntos label:nth-child(1),
-#s2:checked ~ .puntos label:nth-child(2),
-#s3:checked ~ .puntos label:nth-child(3),
-#s4:checked ~ .puntos label:nth-child(4),
-#s5:checked ~ .puntos label:nth-child(5),
-#s6:checked ~ .puntos label:nth-child(6) {
-    background: #8d1b5d;
-}
+.prev3 { pointer-events: auto; }
+.next3 { pointer-events: none; }      /* no avanza más */
 
 /* RESPONSIVO */
-@media (max-width: 800px) {
-    .carrusel {
-        padding: 20px;
-    }
-
-    .carrusel .item img {
-        width: 140px;
-        height: 140px;
+@media (max-width: 768px) {
+    .carrusel .item {
+        min-width: calc((100% - 20px) / 2);
     }
 }
