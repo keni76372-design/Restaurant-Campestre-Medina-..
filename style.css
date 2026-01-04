@@ -130,9 +130,16 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 #s1:checked ~ .izquierda label:nth-child(1),
 #s2:checked ~ .izquierda label:nth-child(2),
 #s3:checked ~ .izquierda label:nth-child(3),
+#s4:checked ~ .izquierda label:nth-child(4),
+#s5:checked ~ .izquierda label:nth-child(5),
+#s6:checked ~ .izquierda label:nth-child(6),
 #s1:checked ~ .derecha label:nth-child(1),
 #s2:checked ~ .derecha label:nth-child(2),
-#s3:checked ~ .derecha label:nth-child(3) {
+#s3:checked ~ .derecha label:nth-child(3),
+#s4:checked ~ .derecha label:nth-child(4),
+#s5:checked ~ .derecha label:nth-child(5),
+#s6:checked ~ .derecha label:nth-child(6)
+ {
     display: block;
 }
 
@@ -154,7 +161,10 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 
 #s1:checked ~ .puntos label:nth-child(1),
 #s2:checked ~ .puntos label:nth-child(2),
-#s3:checked ~ .puntos label:nth-child(3) {
+#s3:checked ~ .puntos label:nth-child(3),
+#s4:checked ~ .puntos label:nth-child(4),
+#s5:checked ~ .puntos label:nth-child(5),
+#s6:checked ~ .puntos label:nth-child(6) {
     background: #8d1b5d;
 }
 
