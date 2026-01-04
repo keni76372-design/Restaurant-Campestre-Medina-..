@@ -49,7 +49,7 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 
 /* IMÁGENES SOLO DEL CARRUSEL */
 .carrusel .imagenes img {
-    width: 100%;
+    width: 600px;
     height: 300px;
     object-fit: cover;
 }
