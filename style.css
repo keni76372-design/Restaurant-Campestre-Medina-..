@@ -135,15 +135,6 @@ h3{text-align:center;color:#6b1212;margin-top:0}
     display: block;
 }
 
-/* Lógica de navegación */
-.prev1 { pointer-events: none; }      /* no retrocede más */
-.next1 { pointer-events: auto; }
-
-.prev2 { pointer-events: auto; }
-.next2 { pointer-events: auto; }
-
-.prev3 { pointer-events: auto; }
-.next3 { pointer-events: none; }      /* no avanza más */
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
