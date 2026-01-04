@@ -123,8 +123,8 @@ h3{text-align:center;color:#6b1212;margin-top:0}
     transform: translate(-50%, -50%) rotate(135deg);
 }
 
-.izquierda { left: 10px; }
-.derecha { right: 10px; }
+.izquierda { left: 5px; }
+.derecha { right: 5px; }
 
 /* Mostrar flecha correcta */
 #s1:checked ~ .izquierda label:nth-child(1),
