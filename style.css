@@ -24,11 +24,11 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 .socials{display:flex;gap:10px;justify-content:center;margin-top:12px}
 .socials img{width:34px}
 .site-footer{background:#3f0a0a;color:#fff;padding:14px 0;margin-top:20px;text-align:center}
-/* CONTENEDOR */
+/* CONTENEDOR PRINCIPAL */
 .carrusel {
-    max-width: 1200px;
+    max-width: 1200px;          /* más largo */
     margin: 40px auto;
-    padding: 10px; /* 10px de espacio */
+    padding: 10px;              /* 10px desde los bordes */
     background: #dffefe;
     border-radius: 10px;
     position: relative;
@@ -45,15 +45,15 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 .carrusel .imagenes {
     display: flex;
     gap: 20px;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
-/* ITEM */
+/* ITEM (4 visibles) */
 .carrusel .item {
-    min-width: calc((100% - 60px) / 4); /* 4 visibles */
+    min-width: calc((100% - 60px) / 4); /* 4 items + espacios */
     background: white;
-    border-radius: 6px;
     text-align: center;
+    border-radius: 6px;
     padding: 10px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
@@ -66,12 +66,18 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 }
 
 /* TEXTO */
-.carrusel .item h4 {
-    margin: 8px 0 0;
+.carrusel .info h4 {
+    margin: 8px 0 2px;
     font-size: 15px;
 }
 
-/* MOVIMIENTO (6 imágenes / 4 visibles) */
+.carrusel .info p {
+    margin: 0;
+    font-weight: bold;
+    color: #948d91;
+}
+
+/* MOVIMIENTO (6 imágenes / 4 visibles → 3 posiciones) */
 #s1:checked ~ .imagenes {
     transform: translateX(0);
 }
@@ -85,20 +91,22 @@ h3{text-align:center;color:#6b1212;margin-top:0}
 }
 
 /* FLECHAS */
-.flecha {
+.carrusel .flecha {
     position: absolute;
     top: 50%;
-    width: 40px;
-    height: 40px;
-    background: #c98aa0;
-    border-radius: 50%;
-    cursor: pointer;
     transform: translateY(-50%);
-    display: none;
 }
 
-/* ICONO FLECHA */
-.flecha::before {
+.carrusel .flecha label {
+    display: none;
+    width: 38px;
+    height: 38px;
+    background: #b5c9da;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carrusel .flecha label::before {
     content: '';
     width: 10px;
     height: 10px;
@@ -107,38 +115,29 @@ h3{text-align:center;color:#6b1212;margin-top:0}
     position: absolute;
     top: 50%;
     left: 50%;
-}
-
-.izquierda {
-    left: 10px;
-}
-
-.izquierda::before {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.derecha {
-    right: 10px;
-}
-
-.derecha::before {
+.carrusel .derecha label::before {
     transform: translate(-50%, -50%) rotate(135deg);
 }
 
-/* Flechas correctas por slide */
-#s1:checked ~ .prev1,
-#s2:checked ~ .prev2,
-#s3:checked ~ .prev3,
-#s1:checked ~ .next1,
-#s2:checked ~ .next2,
-#s3:checked ~ .next3 {
+.izquierda { left: 10px; }
+.derecha { right: 10px; }
+
+/* Mostrar flecha correcta */
+#s1:checked ~ .izquierda label:nth-child(1),
+#s2:checked ~ .izquierda label:nth-child(2),
+#s3:checked ~ .izquierda label:nth-child(3),
+#s1:checked ~ .derecha label:nth-child(1),
+#s2:checked ~ .derecha label:nth-child(2),
+#s3:checked ~ .derecha label:nth-child(3) {
     display: block;
 }
-
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
     .carrusel .item {
-        min-width: calc((100% - 20px) / 2);
+        min-width: calc((100% - 20px) / 2); /* 2 visibles */
     }
 }
