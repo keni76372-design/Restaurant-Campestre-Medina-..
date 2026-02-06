@@ -126,17 +126,24 @@ h3{text-align:center;color:#6b1212;margin-top:0}
     transform: translate(-50%, -50%) rotate(135deg);
 }
 
-/* MOSTRAR FLECHAS CORRECTAS */
+/* MOSTRAR FLECHAS SEGÚN ESTADO */
 #s1:checked ~ .next1,
-#s2:checked ~ .next2,
-#s3:checked ~ .next3,
-#s4:checked ~ .next4,
 #s2:checked ~ .prev2,
+#s2:checked ~ .next2,
 #s3:checked ~ .prev3,
+#s3:checked ~ .next3,
 #s4:checked ~ .prev4,
-#s5:checked ~ .prev5 {
+#s4:checked ~ .next4,
+#s5:checked ~ .prev5,
+#s5:checked ~ .next5,
+#s6:checked ~ .prev6,
+#s6:checked ~ .next6,
+#s7:checked ~ .prev7,
+#s7:checked ~ .next7,
+#s8:checked ~ .prev8 {
     display: block;
-}
+} 
+
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
@@ -202,9 +209,13 @@ h3{text-align:center;color:#6b1212;margin-top:0}
     }
 
     /* MOVIMIENTO CORRECTO (1 card visible) */
+   @media (max-width: 420px) {
     #s1:checked ~ .cards { transform: translateX(0); }
     #s2:checked ~ .cards { transform: translateX(-100%); }
     #s3:checked ~ .cards { transform: translateX(-200%); }
     #s4:checked ~ .cards { transform: translateX(-300%); }
     #s5:checked ~ .cards { transform: translateX(-400%); }
+    #s6:checked ~ .cards { transform: translateX(-500%); }
+    #s7:checked ~ .cards { transform: translateX(-600%); }
+    #s8:checked ~ .cards { transform: translateX(-700%); }
 }
